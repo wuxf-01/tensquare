@@ -38,6 +38,78 @@ export const constantRouterMap = [
   },
 
   {
+    path: '/account',
+    component: Layout,
+    redirect: '/account/table',
+    name: '账号管理',
+    meta: { title: '账号管理', icon: 'example' },
+    children: [
+      {
+        path: 'table',
+        name: '账号列表',
+        component: () => import('@/views/account/index'),
+        meta: { title: '账号列表', icon: 'table' }
+      },
+      {
+        path: 'save',
+        name: '新增账号',
+        component: () => import('@/views/account/add'),
+        meta: { title: '新增账号', icon: 'tree' }
+      }
+    ]
+  },
+  {
+    path: '/commodity',
+    component: Layout,
+    redirect: '/commodity/table',
+    name: '商品管理',
+    meta: { title: '商品管理', icon: 'example' },
+    children: [
+      {
+        path: 'table',
+        name: '商品列表',
+        component: () => import('@/views/commodity/index'),
+        meta: { title: '商品列表', icon: 'table' }
+      },
+      {
+        path: 'save',
+        name: '新增商品',
+        component: () => import('@/views/commodity/add'),
+        meta: { title: '新增商品', icon: 'tree' }
+      }
+    ]
+  },
+  {
+    path: '/buyerOrder',
+    component: Layout,
+    redirect: '/buyerOrder/table',
+    name: '买家订单列表',
+    meta: { title: '买家订单列表', icon: 'example' },
+    children: [
+      {
+        path: 'table',
+        name: '买家订单列表',
+        component: () => import('@/views/buyerOrder/list'),
+        meta: { title: '买家订单列表', icon: 'table' }
+      }
+    ]
+  },
+  {
+    path: '/sellerOrder',
+    component: Layout,
+    redirect: '/sellerOrder/table',
+    name: '卖家订单列表',
+    meta: { title: '卖家订单列表', icon: 'example' },
+    children: [
+      {
+        path: 'table',
+        name: '卖家订单列表',
+        component: () => import('@/views/sellerOrder/list'),
+        meta: { title: '卖家订单列表', icon: 'table' }
+      }
+    ]
+  },
+  /*{
     path: '/example',
     component: Layout,
     redirect: '/example/table',
@@ -118,7 +190,7 @@ export const constantRouterMap = [
         meta: { title: '文章管理', icon: 'table' }
       }
     ]
-  },
+  },*/
 
   { path: '*', redirect: '/404', hidden: true }
 ]
